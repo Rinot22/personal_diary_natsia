@@ -1,0 +1,243 @@
+.ref-parent {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.ref-parent .ref-image {
+    width: 1519px;
+    object-fit: contain;
+    filter: opacity(0.7);
+    /* object-position: center; */
+}
+
+.root {
+    display: flex;
+    flex-flow: column;
+    /* width: 100%; */
+    min-height: 100vh;
+
+    align-items: center;
+    /* justify-content: space-between; */
+
+    background: rgb(213,235,250);
+    background: linear-gradient(117deg, rgba(213,235,250,1) 0%, rgba(255,255,255,1) 100%); 
+
+}
+
+.root::before {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    min-height: 20px;
+    /* background-color: red; */
+}
+
+.root::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+}
+
+.root>.root-content {
+    /* display: block; */
+    /* background-color: black; */
+    min-width: 760px;
+    width: 79%;
+    max-width: 1140px;
+    /* height: 700px; */
+}
+
+.login-section-panel {
+    position: relative;
+    display: flex;
+    /* align-items: stretch; */
+    justify-content: flex-end;
+    /* width: 100%; */
+    /* height: 100%; */
+    background-color: rgb(255, 255, 255);
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    box-shadow: 0px 1px 5px 0px;
+
+
+}
+
+.login-section-panel .login-bg {
+    position: absolute;
+    left: -200px;
+    top: 0px;
+    width: 140%;
+    object-fit:contain;
+}
+
+.login-section-panel .login-panel {
+    /* position: relative; */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+
+    background-color: rgb(255, 255, 255);
+    width: 760px;
+    height: 680px;
+    z-index: 1; /*login-bg position is absolute, it means it is on top of all .login-section-panel*/
+    
+    border-radius: 30px;
+    box-shadow: -5px 0px 20px 0px;
+
+    padding-top: 30px;
+}
+
+.log-into-label{
+    /* height: 110px ; */
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.login-panel .log-into-label > span{
+    font-size: 35px;
+    font-weight: 600;
+
+}
+.login-panel .password,
+.login-panel .username{
+    position: relative;
+}
+
+.login-panel .password > input,
+.login-panel .username > input{
+    position: relative;
+    border-color: #B1B5B8;
+    border-width: 3px;
+    border-style: solid;
+    width: 525px;
+    height: 70px;
+
+    padding: 10px;
+    font-size: 20px;
+    /* font-weight: 00; */
+    letter-spacing: 2px;
+}
+
+.login-panel .password > input::placeholder,
+.login-panel .username > input::placeholder{
+    color: #B1B5B8;
+}
+
+.login-panel .password>img,
+.login-panel .username>img {
+    position: absolute;
+    left: 460px;
+    top: 10px;
+    width: 45px;
+
+}
+
+.login-panel .login-btn{
+    background-color: #A9D2F2;
+    width: 280px;
+    height: 70px;
+    box-shadow: 0px 1px 5px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+}
+
+.login-panel .login-btn > span{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.login-panel .no-account{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;   
+
+    /* height: 38px; */
+
+    width: 515px;
+    gap: 5px;
+}
+
+.login-panel .no-account .label{
+    font-size: 17px;
+    line-height: 22px;
+}
+
+.login-panel .no-account .register-btn{
+    color: black;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+
+
+.login-panel .or {
+    /* background-color: bisque; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+.login-panel .or .line{
+    background-color: #B1B5B8;
+    height: 2px;
+    width: 60px;
+}
+
+.login-panel .or .label{
+    color: #B1B5B8;
+    font-size: 25px;
+}
+
+.login-panel .login-btn-google,
+.login-panel .login-btn-apple{
+    width: 260px;
+    height: 53px;
+
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #B1B5B8;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-left: 10px;
+    /* padding-left: 10px; */
+    gap:15px;
+    /* padding-right: 10px; */
+}
+
+.login-panel .login-btn-google .icon,
+.login-panel .login-btn-apple .icon{
+    /* background-color: black; */
+    width: 25px;
+}
+
+.login-panel .login-btn-google .label,
+.login-panel .login-btn-apple .label{
+    font-size: 20px;
+    color: #999c9f;
+}
