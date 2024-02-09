@@ -7,6 +7,7 @@ class User {
     private $email;
     private $password;
     private $name;
+    private $role;
 
     /**
      * @param $id
@@ -14,12 +15,13 @@ class User {
      * @param $password
      * @param $name
      */
-    public function __construct(int $id, string $email, string $password, string $name)
+    public function __construct(int $id, string $email, string $password, string $name, int $role = 1)
     {
         $this->id = $id;
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
+        $this->role = $role;
     }
 
     public function getId(): int
@@ -42,5 +44,7 @@ class User {
         return $this->name;
     }
 
-
+    public function getRole() {
+        return $this->role;
+    }
 }

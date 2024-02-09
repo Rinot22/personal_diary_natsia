@@ -19,12 +19,3 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - .:/app/
-
-  db:
-    container_name: postgresDB
-    image: postgres
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_USER=postgres

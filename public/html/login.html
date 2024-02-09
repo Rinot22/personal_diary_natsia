@@ -30,19 +30,26 @@
                         <span>Log into your account</span>
                     </div>
 
-                    <form action="/login" method="post">
+                    <div>
+                        <?php if(isset($messages)) {
+                            foreach($messages as $message) echo $message;
+                        }
+                        ?>
+                    </div>
+
+                    <form action="login" method="post">
                         <div class="username">
-                            <input type="email" name="email" id="email" placeholder="Email or Username">
+                            <input type="email" name="email"  placeholder="Email or Username">
                             <img src="/public/img/icon-letter.svg" alt="">
                         </div>
 
                         <div class="password">
-                            <input type="password" name="password" id="password" placeholder="Password">
+                            <input type="password" name="password"  placeholder="Password">
                             <img src="/public/img/icon-lock.svg" alt="">
                         </div>
 
                         <div>
-                            <input class="login-btn" type="submit" value="login">
+                            <input class="login-btn" type="submit" value="Login">
                         </div>
                     </form>
 

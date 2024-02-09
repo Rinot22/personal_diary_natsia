@@ -6,5 +6,7 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    // personalPage - страница чего-то
+    public function calendar() {
+        $this->render('calendar');
+    }
 }
