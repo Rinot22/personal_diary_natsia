@@ -15,6 +15,7 @@ class RecordController extends AppController {
 
     public function records() {
         $records = $this->repo->getRecords($_COOKIE['id']);
+        var_dump($records[0]);
         $this->render('records', ['records' => $records]);
     }
 

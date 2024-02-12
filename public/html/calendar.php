@@ -40,7 +40,7 @@
                     <label for="wellBeing">Well Being (1-10):</label>
                     <input type="number" name="wellBeing" id="wellBeing" min="1" max="10" class="form-control"><br>
                     <label for="comment">Comments:</label><br>
-                    <textarea id="comment" rows="4" cols="50" class="form-control"></textarea><br>
+                    <textarea id="comment" name="comment" rows="4" cols="50" class="form-control"></textarea><br>
                     <label for="image">Image:</label><br>
                     <input type="file" name="image" id="image" class="form-control"><br>
                     <div class="modal-footer">

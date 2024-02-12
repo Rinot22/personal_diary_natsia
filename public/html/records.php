@@ -14,7 +14,7 @@
   html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
   article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
 body {font-family: "Poppins", sans-serif;
-background-image: url('body_bg.png');
+background-image: url('/public/img/body_bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;}
@@ -31,7 +31,7 @@ background-image: url('body_bg.png');
 h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
 .w3-opacity,.w3-hover-opacity:hover{opacity:0.60}.w3-opacity-off,.w3-hover-opacity-off:hover{opacity:1}
 .w3-opacity-max{opacity:0.25}.w3-opacity-min{opacity:0.75}
-.w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}.w3-justify{text-align:justify!important}.w3-center{text-align:center!important}
+.w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}.w3-justify{text-align:justify!important padding-bottom: 30px}.w3-center{text-align:center!important}
 .w3-inline{display: inline}
 </style>
 </head>
@@ -41,36 +41,35 @@ h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="band">
     
     <h2 class="w3-wide">Your records: </h2>
-    <?php foreach ($records as $record): ?>
-      <div class="container-record">
+    <?php foreach ($records as $record):
+    ?>
+      <div class="container-record" >
         <div>
-          <p>Date: <?= $record->getDate(); ?></p>
+          <p class="w3-justify w3-inline">Date: <?= $record->getDate(); ?></p>
         </div>
         <div>
-          <p class="w3-justify w3-inline">Body Temperature: 
-            <?= $record->getBodyTemperature(); ?>
+          <p class="w3-justify w3-inline">Body Temperature: <?= $record->getBodyTemperature(); ?>
           </p> 
         </div>
         <div>
-          <p class="w3-justify w3-inline">Blood Pressure: 
-            <?= $record->getBloodPressure(); ?>
+          <p class="w3-justify w3-inline">Blood Pressure: <?= $record->getBloodPressure(); ?>
           </p>  
         </div>
         <div>
-          <p class="w3-justify w3-inline">Well Being: 
-            <?= $record->getWellBeing(); ?>
+          <p class="w3-justify w3-inline">Well Being: <?= $record->getWellBeing(); ?>
           </p> 
         </div>
         <div>
-          <p class="w3-justify w3-inline">Comments: 
-            <?= $record->getComment(); ?>
+          <p class="w3-justify w3-inline">Comments: <?= $record->getComment(); ?>
           </p> 
         </div>
         <div>
-          <p class="w3-justify w3-inline"><?= $record->getImage();?></p> 
+          <p class="w3-justify w3-inline">
+
+          </p>
           
         </div>
-        <img src="placeholder-image.jpg" style="width:50%">
+        <img src="/public/img/placeholder-image.jpg" style="width:50%">
       </div>
     <?php endforeach; ?>
 </div>

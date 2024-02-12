@@ -11,24 +11,27 @@ require_once 'Repository.php';
 class RecordRepository extends Repository {
     public function getRecords(int $user_id) {
         $stmt = $this->database->connect()->prepare('
-            select * from records where user_id = :user_id;
+            select * from records where user_id = :user_id order by date desc;
         ');
         $stmt->bindParam('user_id', $user_id, PDO::PARAM_STR);
         $stmt->execute();
 
-        while ($res = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $records[] = array(
-                'date' => $res['date'],
-                'body_temperature' => $res['body_temperature'],
-                'blood_pressure' => $res['blood_pressure'],
-                'well_being' => $res['well_being'],
-                'comment' => $res['comment'],
-                'image' => $res['image']
-            );
+        $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $encodedData = json_encode($records, JSON_UNESCAPED_UNICODE || JSON_PRETTY_PRINT);
-            file_put_contents('public/json/records.json', $encodedData);
+        foreach ($articles as $article) {
+            $res[] = new Record(
+                $article['id'],
+                $article['date'],
+                $article['bodyTemperature'],
+                $article['bloodPressure'],
+                $article['wellBeing'],
+                $article['comment'],
+                $article['image'],
+                $article['user_id']
+            );
         }
+
+        return $res;
     }
 
     public function addRecord($id, $date, $bodyTemperature, $bloodPressure, $wellBeing, $comment, $image, $user_id) {

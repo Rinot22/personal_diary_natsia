@@ -6,8 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/article/id=<?= $article->getId();?>">
-
-    </a>
+    <div class="container">
+        <?php foreach ($articles as $article):?>
+            <div class="container _article">
+                <a href="/article/id=<?= $article->getId();?>">
+                    <div class="title"><?= $article->get ?></div>
+                    <div class="date"></div>
+                </a>
+            </div>
+        <? endforeach; ?>
+    </div>
 </body>
 </html>
