@@ -1,0 +1,6 @@
+.gitignore
+config.php
+
+public/fonts
+public/libarary
+public/json
