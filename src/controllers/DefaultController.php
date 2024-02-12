@@ -5,8 +5,4 @@ class DefaultController extends AppController {
     public function index() {
         $this->render('login');
     }
-
-    public function calendar() {
-        $this->render('calendar');
-    }
 }

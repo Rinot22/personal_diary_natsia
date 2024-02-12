@@ -1,8 +1,32 @@
-fetch("/public/mock/records.json")
+fetch("/public/json/records.json")
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        document.getElementById("id")?.setAttribute("value", data.id);
-        document.getElementById("record__date").innerHTML = data.date;
-        document.getElementById("record__body_temperature").innerHTML = data.body_temperature;
-    })
+        const wrapper = document.querySelector(".wrapper");
+        data.map((item)=> {
+            const recordDate = document.createElement("span");
+            const recordBodyTemperature = document.createElement("span");
+            recordDate.innerHTML = item.date;
+            recordBodyTemperature.innerHTML = item.body_temperature;
+
+            wrapper.appendChild(recordDate);
+            wrapper.appendChild(recordBodyTemperature);
+        });
+    });
+
+async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    });
+
+    return response.json();
+}

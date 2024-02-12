@@ -7,12 +7,13 @@ $path = parse_url($path, PHP_URL_PATH);
 
 // DefaultController
 Routing::get('', 'DefaultController');
-Routing::get('calendar', 'DefaultController');
 
 // RecordController
 Routing::get('records', 'RecordController');
-//
+Routing::post('calendar', 'RecordController');
+
 // ArticlesController
+Routing::get('articles', 'ArticleController');
 
 // SecurityController
 Routing::post('login', 'SecurityController');

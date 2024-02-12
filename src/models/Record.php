@@ -10,10 +10,11 @@ class Record {
     private $wellBeing;
     private $comment;
     private $image;
+    private $user_id;
 
 
 
-    public function __construct($id, $date, $bodyTemperature = 0, $bloodPressure = 0, $wellBeing = 0, $comment = ' ', $image = [])
+    public function __construct($id, $date, $bodyTemperature, $bloodPressure, $wellBeing, $comment, $image, $user_id)
     {
         $this->id = $id;
         $this->date = $date;
@@ -22,6 +23,7 @@ class Record {
         $this->wellBeing = $wellBeing;
         $this->comment = $comment;
         $this->image = $image;
+        $this->user_id = $user_id;
     }
 
     /**
@@ -80,7 +82,7 @@ class Record {
         return $this->image;
     }
 
-
-
-
+    public function getUserId() {
+        return $this->user_id;
+    }
 }

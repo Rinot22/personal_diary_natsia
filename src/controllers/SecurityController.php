@@ -7,18 +7,20 @@ require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../repositories/UserRepository.php';
 
 class SecurityController extends AppController {
+    private $repo;
+
+    public function __construct() {
+        parent::__construct();
+        $this->repo = new UserRepository();
+    }
+
     public function login() {
         if (!$this->isPost()) return $this->render('login');
-
-        $repo = new UserRepository();
 
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $user = $repo->getUser($email);
-        $isAdmin = false;
-
-        if ($user->getRole() === 2) $isAdmin == true;
+        $user = $this->repo->getUser($email);
 
 
         if (!$user) {
@@ -28,11 +30,6 @@ class SecurityController extends AppController {
         if ($user->getEmail() !== $email) {
             return $this->render('login', ['messages' => ["Email or password is incorrect"]]);
         }
-
-        // TODO: поменять сообщение на общий вид
-//        if ($password !== $user->getPassword()) {
-//            return $this->render('login', ['messages' => ["Email or password is incorrect"]]);
-//        }
 
         setcookie('id', $user->getId(), time() + (86400 * 30), '/');
         $_SESSION['id'] = $user->getId();
@@ -45,24 +42,19 @@ class SecurityController extends AppController {
     public function registration() {
         if (!$this->isPost()) return $this->render('registration');
 
-        $repo = new UserRepository();
-
         $email = $_POST['email'];
         $password = $_POST['password'];
         $name = $_POST['name'];
-
         $id = time() + (86400 * 30);
 
-
-
-        $user = $repo->getUser($email);
+        $user = $this->repo->getUser($email);
 
         if ($user) {
             return $this->render('registration', ['message' => ['This email is already exist']]);
         }
 
-        $repo->addUser($id, $email, $password, $name);
-        $user = $repo->getUser($email);
+        $this->repo->addUser($id, $email, $password, $name);
+        $user = $this->repo->getUser($email);
 
         setcookie('id', $user->getId(), time() + (86400 * 30), '/');
         $_SESSION['id'] = $user->getId();
