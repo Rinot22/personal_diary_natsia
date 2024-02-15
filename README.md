@@ -10,7 +10,6 @@ docker-compose build
 docker-compose up
 ```
 ## DB views
-(public/img/svg/db_views.svg)
 ![Uploading db_view.svg…](public/img/svg/db_view.svg)
 
 
