@@ -24,10 +24,14 @@ class SecurityController extends AppController {
 
 
         if (!$user) {
-            return $this->render('login', ['message' => ["User doesn't exist"]]);
+            return $this->render('login', ['messages' => ["User doesn't exist"]]);
         }
 
         if ($user->getEmail() !== $email) {
+            return $this->render('login', ['messages' => ["Email or password is incorrect"]]);
+        }
+
+        if (!password_verify($password, $user->getPassword())) {
             return $this->render('login', ['messages' => ["Email or password is incorrect"]]);
         }
 
@@ -44,16 +48,21 @@ class SecurityController extends AppController {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $confPassword = $_POST['confirm_password'];
         $name = $_POST['name'];
         $id = time() + (86400 * 30);
 
         $user = $this->repo->getUser($email);
 
-        if ($user) {
-            return $this->render('registration', ['message' => ['This email is already exist']]);
+        if ($password !== $confPassword) {
+            return $this->render('registration', ['messages' => ['Passwords don\'t match']]);
         }
 
-        $this->repo->addUser($id, $email, $password, $name);
+        if ($user) {
+            return $this->render('registration', ['messages' => ['This email is already exist']]);
+        }
+
+        $this->repo->addUser($id, $email, password_hash($password, PASSWORD_BCRYPT), $name);
         $user = $this->repo->getUser($email);
 
         setcookie('id', $user->getId(), time() + (86400 * 30), '/');

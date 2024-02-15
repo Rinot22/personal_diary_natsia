@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
+    <title>Articles</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/articles-style.css">
 </head>
+
 <body>
-    <div class="container">
-        <?php foreach ($articles as $article):?>
-            <div class="container _article">
-                <a href="/article/id=<?= $article->getId();?>">
-                    <div class="title"><?= $article->get ?></div>
-                    <div class="date"></div>
-                </a>
+    <div id="root">
+
+
+        <div id="article-panel">
+            <div class="article">
+                <div class="image-panel">
+                    <img class="large" src="/public/img/articles/article_250x150.jpg" alt="article image large">
+                    <img class="small" src="/public/img/articles/article_150x150.jpg" alt="article image small">
+                </div>
+                <span class="info-panel">
+                    <div class="title">Some title</div>
+                    <img class="mobile" src="/public/img/articles/article_450x200.jpg" alt="">
+                    <div class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                </span>
             </div>
-        <? endforeach; ?>
+        </div>
     </div>
+
+    <script src="/public/js/articles.js"></script>
 </body>
+
 </html>

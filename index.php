@@ -14,6 +14,7 @@ Routing::post('calendar', 'RecordController');
 
 // ArticlesController
 Routing::get('articles', 'ArticleController');
+Routing::get('article', 'ArticleController');
 
 // SecurityController
 Routing::post('login', 'SecurityController');

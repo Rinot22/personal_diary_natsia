@@ -10,69 +10,75 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap">
 
 <style>
-    html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
-  html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
-  article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
-body {font-family: "Poppins", sans-serif;
-background-image: url('/public/img/body_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;}
-.w3-wide {font-family: 'Baloo Chettan', cursive;}
-.w3-content,.w3-auto{margin-left:auto;margin-right:auto}.w3-content{max-width:980px}.w3-auto{max-width:1140px}
-.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
-.w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
-.w3-content,.w3-auto{margin-left:auto;margin-right:auto}.w3-content{max-width:980px}.w3-auto{max-width:1140px}
-.w3-hoverable tbody tr:hover,.w3-ul.w3-hoverable li:hover{background-color:#ccc}.w3-centered tr th,.w3-centered tr td{text-align:center}
-.w3-bar{width:100%;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}
-.w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
-.w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}.w3-justify{text-align:justify!important}.w3-center{text-align:center!important}
-.w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
-h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
-.w3-opacity,.w3-hover-opacity:hover{opacity:0.60}.w3-opacity-off,.w3-hover-opacity-off:hover{opacity:1}
-.w3-opacity-max{opacity:0.25}.w3-opacity-min{opacity:0.75}
-.w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}.w3-justify{text-align:justify!important padding-bottom: 30px}.w3-center{text-align:center!important}
-.w3-inline{display: inline}
-</style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('/public/img/body_bg.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust opacity as needed */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-height: 100vh; /* Make the container at least the height of the viewport */
+        }
+        .accent {
+            color: #008df3;
+            font-family: 'Baloo Chettan', cursive;
+        }
+        .category {
+            margin-top: 40px;
+            font-weight: bold;
+        }
+        .data {
+            margin-bottom: 20px;
+        }
+        .navbar {
+            height: 20px;
+            /* Add styling for your navbar here */
+        }
+    </style>
 </head>
+
+
 <body>
 
-<div class="w3-content" style="max-width:2000px;  text-align:left">
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="band">
-    
-    <h2 class="w3-wide">Your records: </h2>
+    <div class="navbar"></div><!-- Spacer for Navbar -->
+    <div class="container">
+    <h2 class="accent">Your records: </h2>
     <?php foreach ($records as $record):
     ?>
       <div class="container-record" >
         <div>
-          <p class="w3-justify w3-inline">Date: <?= $record->getDate(); ?></p>
+          <p class="data"> <p class="category accent">Date: </p> <?= $record->getDate(); ?></p>
         </div>
         <div>
-          <p class="w3-justify w3-inline">Body Temperature: <?= $record->getBodyTemperature(); ?>
+          <p class="data"> <p class="category accent">Body Temperature: </p> <?= $record->getBodyTemperature(); ?>
           </p> 
         </div>
         <div>
-          <p class="w3-justify w3-inline">Blood Pressure: <?= $record->getBloodPressure(); ?>
+        <p class="data"> <p class="category accent">Blood Pressure: </p> <?= $record->getBloodPressure(); ?>
           </p>  
         </div>
         <div>
-          <p class="w3-justify w3-inline">Well Being: <?= $record->getWellBeing(); ?>
+          <p class="data"> <p class="category accent">Well Being: </p> <?= $record->getWellBeing(); ?>
           </p> 
         </div>
         <div>
-          <p class="w3-justify w3-inline">Comments: <?= $record->getComment(); ?>
+          <p class="data"> <p class="category accent">Comments: </p> <?= $record->getComment(); ?> 
           </p> 
         </div>
         <div>
-          <p class="w3-justify w3-inline">
-
-          </p>
-          
+          <p class="category accent">Image: </p>
         </div>
         <img src="/public/img/placeholder-image.jpg" style="width:50%">
       </div>
     <?php endforeach; ?>
-</div>
-
 </body>
 </html>

@@ -13,15 +13,40 @@
     <title>My own diary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+
+
     <style>
       #calendar {
           max-width: 600px;
           margin: 0 auto;
       }
+
+     
+        body{
+
+        background-image: url('/public/img/body_bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+        font-family: 'Poppins', sans-serif;
+
+        }
+
+        .accent {
+            color: #008df3;
+            font-family: 'Baloo', cursive;
+        }
+
+
   </style>
+  
 </head>
 <body>
-   <h2> My personal health journal</h2>
+
+    <h2 class="accent"> My personal health journal</h2>
     <div id='calendar'></div>
 
     <!-- Modal window for enter data -->
@@ -33,7 +58,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="calendar" method="post" class="modal-body">
-                    <label for="temperature">Body Temparature:</label>
+                    <label for="temperature">Body Temperature:</label>
                     <input type="number" name="temperature" id="temperature" class="form-control"><br>
                     <label for="pressure">Blood Pressure:</label>
                     <input type="number" name="pressure" id="pressure" class="form-control"><br>
