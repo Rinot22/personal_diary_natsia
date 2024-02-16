@@ -40,7 +40,7 @@ async function GetScrollData()
     try
     {
         let data = await DownloadJsonData("/public/json/articles.json");
-        scroll_data = ParseArticles(data);
+        ParseArticles(data);
     } catch (error)
     {
 
@@ -48,23 +48,20 @@ async function GetScrollData()
 }
 
 function ParseArticles(parsedData) {
-    let parsedInfos = [];
-    
-    for (const entry of parsedData.articles) {
-        const article = new ScrollElementInfo();
-        article.title = entry.title || "No Name";
-        article.subtitle = entry.subtitle || "No subtitle";
+    const articlePanel = document.querySelector('#article-panel');
 
-        article.img_url_small = entry["small-image-url"];
-        article.img_url_large = entry["large-image-url"];
-        article.img_url_mobile = entry["mobile-image-url"];
+    const article = document.querySelector(".article");
+    parsedData.map((item)=> {
+        const cloneArticle = article.cloneNode(true);
+        const title = cloneArticle.querySelector('.title');
+        const subContent = cloneArticle.querySelector('.subcontent');
+        const articleLink = cloneArticle.querySelector('.article-link')
 
-        article.url = entry.url;
-
-        parsedInfos.push(article);
-    }
-
-    return parsedInfos;
+        title.innerHTML = item.title;
+        subContent.innerHTML = item.subcontent;
+        articleLink.href = `article/${item.id}`;
+        articlePanel.appendChild(cloneArticle);
+    });
 }
 
 function CheckScrollPosition(forcedAdd = false)
@@ -119,13 +116,13 @@ function SetScrollElementData(elem, data)
 {
 
     let title = elem.querySelector(".title");
-    let subtitle = elem.querySelector(".subtitle");
+    let subcontent = elem.querySelector(".subcontent");
     let img_elem_small = elem.querySelector(".small");
     let img_elem_large = elem.querySelector(".large");
     let img_elem_mobile = elem.querySelector(".mobile");
 
     title.textContent = data.title;
-    subtitle.textContent = data.subtitle;
+    subcontent.textContent = data.subcontent;
     img_elem_small.src = data.img_url_small;
     img_elem_large.src = data.img_url_large;
     img_elem_mobile.src = data.img_url_mobile;
@@ -147,28 +144,16 @@ async function DownloadJsonData(url)
     {
         const response = await fetch(url);
 
+
         if (!response.ok)
         {
             throw new Error(`Failed to download ${url}. Status: ${response.status}`);
         }
 
-        const jsonContent = await response.json();
-        return jsonContent;
+        return await response.json();
     } catch (error)
     {
         console.error(`Error during download and parsing: ${error.message}`);
         throw error;
     }
-}
-
-class ScrollElementInfo
-{
-    img_url_small = "";
-    img_url_large = "";
-    img_url_mobile = "";
-
-    url = "";
-
-    title = "";
-    subtitle = "";
 }

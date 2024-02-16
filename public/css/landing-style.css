@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Righteous&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+head,
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+a:link, a:visited {
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-login {
+    color: white;
+}
+
+.btn-signup {
+    color: rgb(99, 180, 252);;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("/public/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+#title {
+    font-family: "Baloo+Chettan", sans-serif;
+    font-size: 50px;
+    color: white;
+    line-height: 1;
+
+    text-align: center;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#subtitle {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: white;
+    line-height: 1;
+
+    margin-top: 15px;
+    text-align: center;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#button-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#btn-login {
+    background-color: rgb(99, 180, 252);
+    color: white;
+
+    font-family: "Lato", sans-serif;
+    font-size: 1.2em;
+
+    width: 150px;
+    height: 50px;
+
+    border-style: none;
+
+    cursor: pointer;
+}
+
+#btn-signup {
+    background-color: white;
+    color: rgb(99, 180, 252);
+
+    font-family: "Lato", sans-serif;
+    font-size: 1.2em;
+
+    width: 150px;
+    height: 50px;
+
+    border-style: none;
+
+    cursor: pointer;
+}
+
+@media (width < 500px) {
+    #button-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        gap: 10px;
+        margin-top: 15px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    #btn-login,
+    #btn-signup {
+        width: 100%;
+
+        max-width: 550px;
+
+    }
+
+}

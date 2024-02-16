@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Righteous&display=swap');
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+body { 
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-image: url('/public/img/body_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.w3-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 980px;
+}
+.w3-container, .w3-panel {
+  padding: 0.01em 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.w3-wide { font-family: 'Baloo Chettan', cursive; }
+.w3-center { text-align: center; }
+h1, h2, h3, h4, h5, h6 { 
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0;
+}
+.w3-opacity, .w3-hover-opacity:hover { opacity: 0.60; }
+.w3-opacity-off, .w3-hover-opacity-off:hover { opacity: 1; }
+.w3-left-align { text-align: left !important; }
+.w3-right-align { text-align: right !important; }
+.w3-justify { text-align: justify !important; }

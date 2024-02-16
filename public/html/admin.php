@@ -9,12 +9,12 @@
 </head>
 
 <body>
+    <?php $this->render('navbar') ?>
     <div id="root">
         <div id="control-panel">
             <div id="admin-label">ADMIN PANEL</div>
             <button id="btn-add-article" onclick="OnAddArticleClicked()">Add article</button>
             <button id="btn-delete-article" onclick="OnDeleteArticleClicked()">Delete article</button>
-            <button id="btn-delete-user" onclick="OnDeleteUserClicked()">Delete User</button>
         </div>
 
         <dialog id="add-article-dialog">

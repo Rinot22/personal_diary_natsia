@@ -15,8 +15,7 @@ class RecordController extends AppController {
 
     public function records() {
         $records = $this->repo->getRecords($_COOKIE['id']);
-        var_dump($records[0]);
-        $this->render('records', ['records' => $records]);
+        return $this->render('records', ['records' => $records]);
     }
 
     public function calendar() {
@@ -33,6 +32,6 @@ class RecordController extends AppController {
 
         $this->repo->addRecord($id, $date, $bodyTemperature, $bloodPressure, $wellBeing, $comment, $image, $_COOKIE['id']);
 
-        $this->render('calendar');
+        return $this->render('calendar');
     }
 }

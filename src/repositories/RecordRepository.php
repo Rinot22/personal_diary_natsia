@@ -22,9 +22,9 @@ class RecordRepository extends Repository {
             $res[] = new Record(
                 $record['id'],
                 $record['date'],
-                $record['bodyTemperature'],
-                $record['bloodPressure'],
-                $record['wellBeing'],
+                $record['body_temperature'],
+                $record['blood_pressure'],
+                $record['well_being'],
                 $record['comment'],
                 $record['image'],
                 $record['user_id']

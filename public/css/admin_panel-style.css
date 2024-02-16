@@ -63,11 +63,7 @@ body {
     background-color: rgb(234, 234, 234);
 }
 
-#btn-articles,
-#btn-calendar,
-#btn-history {
-    /* margin-right: auto; */
-}
+
 
 #btn-admin{
     margin-left: auto;

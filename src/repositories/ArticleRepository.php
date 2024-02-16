@@ -52,7 +52,7 @@ class ArticleRepository extends Repository {
 
     public function getArticle($id) {
         $stmt = $this->database->connect()->prepare('
-            select id, title, acontent from public.articles 
+            select * from public.articles 
             where id= :id;
         ');
         $stmt->bindParam('id', $id, PDO::PARAM_INT);
@@ -60,11 +60,15 @@ class ArticleRepository extends Repository {
 
         $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return new Article(
-            $article['id'],
-            $article['title'],
-            $article['acontent']
+        $res[] = array(
+            'id' => $article['id'],
+            'title' => $article['title'],
+            'subcontent' => $article['subcontent'],
+            'content' => $article['acontent']
         );
+
+        $encoded_data = json_encode($res, JSON_PRETTY_PRINT, JSON_UNESCAPED_UNICODE);
+        file_put_contents('public/json/article.json', $encoded_data);
     }
 
     public function getArticleByTitle($title) {

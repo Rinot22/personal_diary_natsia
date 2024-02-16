@@ -39,8 +39,7 @@ class SecurityController extends AppController {
         setcookie('role', $user->getRole());
         $_SESSION['id'] = $user->getId();
 
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: $url/calendar");
+        return $this->render('calendar');
 
     }
 
@@ -69,13 +68,12 @@ class SecurityController extends AppController {
         setcookie('id', $user->getId(), time() + (86400 * 30), '/');
         $_SESSION['id'] = $user->getId();
 
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/calendar");
+        return $this->render('calendar');
     }
 
     public function admin() {
         if (!$this->isPost()) return $this->render('admin');
-        if ($_COOKIE['role'] !== 2) {
+        if ((int)$_COOKIE['role'] !== 2) {
             return $this->render('articles', ['message' => 'Access denied. You are not an admin']);
         }
 

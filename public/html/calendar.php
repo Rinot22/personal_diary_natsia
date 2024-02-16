@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
    
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-+nuyMYpKysyqVKN0itGvL2xdDVO3jI1GXpF/+8Hfp3Wsr42J5lHPjvOZdvz9x9RPS1TXR0gYpPjwANx5n0bcvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
-   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-+nuyMYpKysyqVKN0itGvL2xdDVO3jI1GXpF/+8Hfp3Wsr42J5lHPjvOZdvz9x9RPS1TXR0gYpPjwANx5n0bcvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
    
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-vsiqnKNcF5MgL2nQXQVsBQzZr6e3T04o1B/XZ2E8ozfb4W2YssNpoMfQ6WUqq/EHjZfWolO7sO5nLCdC6o5U+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-vsiqnKNcF5MgL2nQXQVsBQzZr6e3T04o1B/XZ2E8ozfb4W2YssNpoMfQ6WUqq/EHjZfWolO7sO5nLCdC6o5U+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My own diary</title>
@@ -15,37 +15,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
-
-
-    <style>
-      #calendar {
-          max-width: 600px;
-          margin: 0 auto;
-      }
-
-     
-        body{
-
-        background-image: url('/public/img/body_bg.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-
-        font-family: 'Poppins', sans-serif;
-
-        }
-
-        .accent {
-            color: #008df3;
-            font-family: 'Baloo', cursive;
-        }
-
-
-  </style>
-  
+    <link rel="stylesheet" href="/public/css/calendar-style.css">
 </head>
 <body>
-
+    <?php $this->render('navbar') ?>
     <h2 class="accent"> My personal health journal</h2>
     <div id='calendar'></div>
 
