@@ -9,8 +9,10 @@ Open up your terminal and run the following:
 docker-compose build
 docker-compose up
 ```
-## DB views
-![Uploading db_view.svg…](public/img/svg/db_view.svg)
+## DB diagram
+![Uploading db_view.svg…](public/img/svg/db_view.png)
 
 
 ## App pages views
+![Uploading db_view.svg…](public/img/svg/app_view_registration.svg)
+![Uploading db_view.svg…](public/img/svg/app_view_login.svg)
