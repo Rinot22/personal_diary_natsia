@@ -49,7 +49,7 @@
 
 <body>
 
-    <div class="navbar"></div><!-- Spacer for Navbar -->
+    <div w3-include-html="navbar.html"><!-- Spacer for Navbar -->
     <div class="container">
     <h2 class="accent">Your records: </h2>
     <?php foreach ($records as $record):
@@ -60,25 +60,23 @@
         </div>
         <div>
           <p class="data"> <p class="category accent">Body Temperature: </p> <?= $record->getBodyTemperature(); ?>
-          </p> 
         </div>
         <div>
         <p class="data"> <p class="category accent">Blood Pressure: </p> <?= $record->getBloodPressure(); ?>
-          </p>  
         </div>
         <div>
           <p class="data"> <p class="category accent">Well Being: </p> <?= $record->getWellBeing(); ?>
-          </p> 
         </div>
         <div>
-          <p class="data"> <p class="category accent">Comments: </p> <?= $record->getComment(); ?> 
-          </p> 
+          <p class="data"> <p class="category accent">Comments: </p> <?= $record->getComment(); ?>
         </div>
         <div>
           <p class="category accent">Image: </p>
         </div>
-        <img src="/public/img/placeholder-image.jpg" style="width:50%">
+        <img src="/public/img/placeholder-image.jpg" style="width:50%" alt="">
       </div>
     <?php endforeach; ?>
+
+        <script src="/public/js/navbar.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ class Article {
      * @param $title
      * @param $content
      */
-    public function __construct($id, $title, $subtitle, $content)
+    public function __construct($id, $title, $subtitle = null, $content = null)
     {
         $this->id = $id;
         $this->title = $title;

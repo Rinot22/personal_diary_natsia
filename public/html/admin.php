@@ -18,13 +18,13 @@
         </div>
 
         <dialog id="add-article-dialog">
-            <form action="add-article" method="post" id="add-article-form">
+            <form action="add" method="post" id="add-article-form">
             <label for="add-article-title">Title:</label><br>
             <input type="text" name="title" id="add-article-title"><br><br>
-            <label for="add-article-subtitle">Subitle:</label><br>
-            <textarea name="subtitle" id="add-article-subtitle" cols="30" rows="3"></textarea><br><br>
+            <label for="add-article-subtitle">Subcontent:</label><br>
+            <textarea name="subcontent" id="add-article-subtitle" cols="30" rows="3"></textarea><br><br>
             <label for="add-article-subtitle">Text:</label><br>
-            <textarea name="text" id="add-article-text" cols="30" rows="10"></textarea><br><br>
+            <textarea name="content" id="add-article-text" cols="30" rows="10"></textarea><br><br>
             <label for="add-article-subtitle">Image:</label><br>
             <input type="file" name="image" id="add-article-image"><br><br>
             <div class="footer">
@@ -35,22 +35,11 @@
         </dialog>
 
         <dialog id="delete-article-dialog">
-            <form action="delete-article" method="post" id="delete-article-form">
+            <form action="delete" method="post" id="delete-article-form">
                 <label for="delete-article-title">Title:</label><br>
                 <input type="text" name="title" id="delete-article-title"><br><br>
                 <div class="footer">
                     <button type="button" class="btn-cancel" onclick="document.querySelector('#delete-article-dialog').close()">Cancel</button>
-                    <input type="submit" value="Submit">
-                </div>            
-                </form>
-        </dialog>
-
-        <dialog id="delete-user-dialog">
-            <form action="delete-user" method="post" id="delete-user-form">
-                <label for="delete-user-name">Username:</label><br>
-                <input type="text" name="username" id="delete-user-name"><br><br>
-                <div class="footer">
-                    <button type="button" class="btn-cancel" onclick="document.querySelector('#delete-user-dialog').close()">Cancel</button>
                     <input type="submit" value="Submit">
                 </div>            
                 </form>

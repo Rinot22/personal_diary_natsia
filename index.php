@@ -15,10 +15,13 @@ Routing::post('calendar', 'RecordController');
 // ArticlesController
 Routing::get('articles', 'ArticleController');
 Routing::get('article', 'ArticleController');
+Routing::post('add', 'ArticleController');
+Routing::post('delete', 'ArticleController');
 
 // SecurityController
 Routing::post('login', 'SecurityController');
 Routing::post('registration', 'SecurityController');
 Routing::get('logout', 'SecurityController');
+Routing::get('admin', 'SecurityController');
 
 Routing::run($path);

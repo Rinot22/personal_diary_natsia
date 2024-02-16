@@ -18,16 +18,18 @@
                     <img class="large" src="/public/img/articles/article_250x150.jpg" alt="article image large">
                     <img class="small" src="/public/img/articles/article_150x150.jpg" alt="article image small">
                 </div>
-                <span class="info-panel">
+                <a href="article">
+                    <span class="info-panel">
                     <div class="title">Some title</div>
                     <img class="mobile" src="/public/img/articles/article_450x200.jpg" alt="">
                     <div class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                 </span>
+                </a>
             </div>
         </div>
     </div>
 
-    <script src="/public/js/articles.js"></script>
+<!--    <script src="/public/js/articles.js"></script>-->
 </body>
 
 </html>

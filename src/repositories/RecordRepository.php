@@ -16,18 +16,18 @@ class RecordRepository extends Repository {
         $stmt->bindParam('user_id', $user_id, PDO::PARAM_STR);
         $stmt->execute();
 
-        $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($articles as $article) {
+        foreach ($records as $record) {
             $res[] = new Record(
-                $article['id'],
-                $article['date'],
-                $article['bodyTemperature'],
-                $article['bloodPressure'],
-                $article['wellBeing'],
-                $article['comment'],
-                $article['image'],
-                $article['user_id']
+                $record['id'],
+                $record['date'],
+                $record['bodyTemperature'],
+                $record['bloodPressure'],
+                $record['wellBeing'],
+                $record['comment'],
+                $record['image'],
+                $record['user_id']
             );
         }
 
