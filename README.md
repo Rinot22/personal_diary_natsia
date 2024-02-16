@@ -14,5 +14,10 @@ docker-compose up
 
 
 ## App pages views
-![Uploading db_view.svg…](public/img/svg/app_view_registration.svg)
-![Uploading db_view.svg…](public/img/svg/app_view_login.svg)
+![Uploading db_view.svg…](public/img/svg/login.png)
+![Uploading db_view.svg…](public/img/svg/registration.png)
+![Uploading db_view.svg…](public/img/svg/admin_panel.png)
+![Uploading db_view.svg…](public/img/svg/articles.png)
+![Uploading db_view.svg…](public/img/svg/calendar.png)
+![Uploading db_view.svg…](public/img/svg/landing.png)
+![Uploading db_view.svg…](public/img/svg/records.png)
