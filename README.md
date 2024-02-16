@@ -10,7 +10,9 @@ docker-compose build
 docker-compose up
 ```
 ## DB views
-![Uploading db_view.svg…](public/img/svg/db_view.svg)
+![Uploading db_view.svg…](public/img/svg/db_view.png)
 
 
 ## App pages views
+(public/img/svg/app_view_registration.svg)
+(public/img/svg/app_view_login.svg)
