@@ -9,3 +9,8 @@ Open up your terminal and run the following:
 docker-compose build
 docker-compose up
 ```
+## DB views
+![Uploading db_view.svg…](public/img/svg/db_view.svg)
+
+
+## App pages views
